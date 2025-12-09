@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .form-box {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        #message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+        <h3>Sign Up Form</h3>
+
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <button onclick="submitForm()">Submit</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let msg = document.getElementById("message");
+
+            if (name === "" || email === "") {
+                msg.style.color = "red";
+                msg.innerHTML = "Please fill all fields!";
+            } else {
+                msg.style.color = "green";
+                msg.innerHTML = "Form submitted successfully!";
+            }
+        }
+    </script>
+
+</body>
+</html>
